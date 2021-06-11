@@ -1,8 +1,14 @@
 import 'package:app_logistica/util/constants.dart';
 import 'package:app_logistica/util/constraints.dart';
+import 'package:app_logistica/views/password_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
+
+  void handleNextViewPass(BuildContext context){
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => PasswordView()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +59,7 @@ class LoginView extends StatelessWidget {
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.black),
                 ),
-                onPressed: () {},
+                onPressed: () => handleNextViewPass(context),
                 child: Text('Siguiente'),
               )
             ],
